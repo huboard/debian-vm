@@ -9,5 +9,8 @@ tmp
 *.swp
 Makefile.local
 box/
+.librarian
+.tmp
+modules
 
 .DS_Store

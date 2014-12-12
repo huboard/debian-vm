@@ -1,8 +1,8 @@
 {
   "variables": {
     "version": "0.1.0",
-    "cm": "nocm",
-    "cm_version": "",
+    "cm": "puppet",
+    "cm_version": "latest",
     "cleanup_pause": "",
     "headless": "",
     "update": "false",
@@ -138,9 +138,14 @@
       "script/vagrant.sh",
       "script/vmtool.sh",
       "script/cmtool.sh",
-      "script/minimize.sh",
       "script/cleanup.sh"
     ]
+  },
+  {
+    "type": "puppet-masterless",
+    "manifest_file": "puppet/manifests/base.pp",
+    "module_paths": ["modules", "puppet/modules"],
+    "facter": { "osfamily": "debian" }
   }],
   "post-processors": [{
     "type": "vagrant",
